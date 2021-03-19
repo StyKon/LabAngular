@@ -3,26 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MemberListComponent } from './member-list/member-list.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatTableModule } from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
 
+import { MatSliderModule } from '@angular/material/slider';
+import {MatTableModule} from '@angular/material/table';
+import {MaterialModule}  from './material.module';
+import {MemberService } from 'src/services/member.service';
+import { MemberFormComponent } from './member-form/member-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MemberListComponent } from './member-list/member-list.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
-    MemberListComponent
+    MemberListComponent,
+    MemberFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     MatSliderModule,
     MatTableModule,
-    MatIconModule
+    FlexLayoutModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [MemberService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

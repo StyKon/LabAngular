@@ -6,7 +6,7 @@ import { GLOBAL } from '../app-config';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'cin', 'name', 'type', 'cv' , 'createdDate'];
+  displayedColumns: string[] = ['id', 'cin', 'name', 'type', 'cv' , 'createdDate','action'];
 dataSource: any[] = GLOBAL._DB.members;
   constructor() { }
 

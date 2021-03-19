@@ -7,7 +7,7 @@
           "name":"Imen",
           "type":"Teacher",
           "cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
-          "CreatedDate":"12/02/2021"
+          "createdDate":"12/02/2021"
       },
       {
           "id":"7896",
@@ -15,7 +15,7 @@
           "name":"khalil",
           "type":"Teacher",
           "cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
-          "CreatedDate":"14/02/2021"
+          "createdDate":"14/02/2021"
         },
         {
           "id":"5263",
@@ -23,7 +23,7 @@
           "name":"Med amin",
           "type":"Student",
           "cv":"https://www.cdc.gov/polio/stop/pdf/stop-cv-format.pdf",
-          "CreatedDate":"15/02/2021"
+          "createdDate":"15/02/2021"
         }
 
   ]
