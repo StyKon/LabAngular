@@ -4,5 +4,5 @@ export interface Member {
     name:String;
     type:String;
     cv:String;
-    createdDate:String;
+    CreatedDate:String;
 }

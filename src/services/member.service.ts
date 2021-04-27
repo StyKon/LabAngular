@@ -7,9 +7,29 @@ import { Member } from 'src/models/member.model';
 })
 
 export class MemberService {
-  tab : Member[] = [] ;
 
+  public tab : Member[] = GLOBAL._DB.members;
   constructor() {
-    this.tab = GLOBAL._DB.members;
+
    }
+   GetAllMembers() : Promise<Member[]> {
+    return new Promise(resolve=> resolve(this.tab));
+      }
+  SaveMember(member : any) : Promise<Member> {
+
+  const memberToSave ={
+  id : member.id ?? Math.ceil (Math.random() * 10000).toString(),
+  CreatedDate : member.createdDate ?? new Date().toLocaleDateString(),
+  ...member};
+  this.tab = [memberToSave, ...this.tab.filter(item => item.id !== member.id)]
+  return new Promise (resolve => resolve (memberToSave)) };
+
+  getMemberById (id : string) : Promise<Member> {
+    return new Promise (resolve => resolve (this.tab.filter(item => item.id=== id)[0]?? null))
+  };
+  RemoveMemberById(id:string) :Promise <void>
+  {
+    this.tab=this.tab.filter(item=> item.id!==id);
+    return new Promise (resolve =>resolve());
+  }
 }

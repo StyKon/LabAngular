@@ -1,23 +1,30 @@
 <p>member-form works!</p>
-<form [formGroup]= "form" (ngSubmit)= "onSubmit()">
-  <p>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="cin" formControlName="cin">
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="name" formControlName="name">
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="cv" formControlName="cv">
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="type" formControlName="type">
-        </mat-form-field>
-   <br>
+<form [formGroup]="form" *ngIf="!!form" (ngSubmit)="onSubmit()" >
+   <p>
+       <mat-form-field>
+      <input matInput placeholder="cin" formControlName="cin">
+    </mat-form-field>
+    </p>
+    <br>
+    <p>
+    <mat-form-field>
+      <input matInput placeholder="name" formControlName="name">
+    </mat-form-field>
+    </p>
+    <br>
+    <p>
+    <mat-form-field>
+      <input matInput placeholder="cv" formControlName="cv">
+    </mat-form-field>
 </p>
-  <button mat-button type="Submit" [disabled]>Submit</button>
-
-</form>
+    <br>
+    <p>
+    <mat-form-field>
+      <input matInput placeholder="type" formControlName="type">
+    </mat-form-field>
+</p>
+    <br>
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="form.invalid">Submit</button>
+    </div>
+  </form>
